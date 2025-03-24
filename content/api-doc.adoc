@@ -1,0 +1,71 @@
+= Sample API Documentation
+John Doe <johndoe@example.com>
+v1.0, 2025-03-24
+:toc:
+:toc-title: Table of Contents
+:sectnums:
+
+== Introduction
+
+Welcome to the Sample API! This API allows developers to manage resources using RESTful principles.
+
+- **Base URL:** `https://api.example.com/v1`
+- **Content-Type:** `application/json`
+- **Authentication:** Bearer Token (OAuth 2.0)
+
+== Authentication
+
+All requests must include an Authorization header with a valid **Bearer Token**.
+
+**Example:**
+```http
+Authorization: Bearer your-access-token
+
+GET /users HTTP/1.1
+Host: api.example.com
+Authorization: Bearer your-access-token
+Content-Type: application/json
+
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "email": "bob@example.com"
+    }
+  ]
+}
+
+
+GET /users/{id} HTTP/1.1
+Host: api.example.com
+Authorization: Bearer your-access-token
+Content-Type: application/json
+
+GET /users/1 HTTP/1.1
+
+{
+  "id": 1,
+  "name": "Alice Johnson",
+  "email": "alice@example.com"
+}
+
+{
+  "error": "Too many requests. Try again later."
+}
+
+```
+
+
+== **How to Preview**
+You can preview this AsciiDoc file using:
+- **IntelliJ AsciiDoc Plugin**
+- **Asciidoctor CLI** (`asciidoctor api-docs.adoc` to generate HTML)
+- **GitHub (which supports `.adoc` files)**
+
+Would you like any modifications, such as adding OpenAPI integration or expanding on specific sections? 🚀

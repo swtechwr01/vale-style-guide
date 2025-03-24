@@ -1,0 +1,19 @@
+extends: capitalization
+
+message: "'%s' does not follow TechStyle guidelines."
+level: warning
+
+ignore: ['API', 'REST', 'GitHub', 'Docs-as-Code']
+
+scope: title, header, text
+
+tokens:
+  - usage: "Use active voice."
+    message: "Passive voice detected: '%s'"
+    level: warning
+    match: '\b(is|was|were|be|been|being)\b'
+
+  - usage: "Use 'must' instead of 'should' for requirements."
+    message: "Use 'must' for requirements: '%s'"
+    level: error
+    match: '\bshould\b'
